@@ -13,8 +13,9 @@ const app = express();
   Включаем CORS и задаем ему параметры:
 */
 
-app.use(cors({
-  origin:'*'
+app.use(cors({ 
+  origin: ['http://localhost:8080'], // URL с которого можно принимать кроссдоменные запросы. Здесь должен быть URL нашего стороннего веб приложения
+  credentials: true // Добавить заголовок Access-Control-Allow-Credentials
 }));
 
 //app.set('​trust proxy​', 1) // Считаем защищенным первый прокси сервер (именно первый по счету по пути от сервера до клиента)
