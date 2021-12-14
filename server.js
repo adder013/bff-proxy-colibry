@@ -13,7 +13,9 @@ const app = express();
   Включаем CORS и задаем ему параметры:
 */
 
-app.use(cors());
+app.use(cors({
+  origin:'*'
+}));
 
 //app.set('​trust proxy​', 1) // Считаем защищенным первый прокси сервер (именно первый по счету по пути от сервера до клиента)
 app.use(express.json());
@@ -32,7 +34,7 @@ app.use(session(
   })
 );
 
-const port = 8000; // Устанавливаем дефолтный порт
+const port =process.env.PORT || 8000; // Устанавливаем дефолтный порт
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
