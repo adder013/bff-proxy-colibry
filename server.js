@@ -14,7 +14,7 @@ const app = express();
 */
 
 app.use(cors({ 
-  origin: ['http://localhost:8080'], // URL с которого можно принимать кроссдоменные запросы. Здесь должен быть URL нашего стороннего веб приложения
+  origin: ['http://localhost:8080','https://custom-colibri-web.netlify.app'], // URL с которого можно принимать кроссдоменные запросы. Здесь должен быть URL нашего стороннего веб приложения
   credentials: true // Добавить заголовок Access-Control-Allow-Credentials
 }));
 
