@@ -35,8 +35,7 @@ router.get("/", (req, res) => {
   ).then((result) => {
     req.session.token = result.data.access_token;
       // Сохраним токен в сессию
-    console.log('asd')
-    res.redirect(`http://localhost:8080`); // Редиректим пользователя обратно в наше веб приложение
+    res.redirect(process.env.FRONTEND_URI); // Редиректим пользователя обратно в наше веб приложение
   }).catch((err) => {
     console.error(err);
   });
